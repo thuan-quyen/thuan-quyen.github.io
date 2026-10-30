@@ -10,7 +10,6 @@ Trang chính là `index.html`, dùng các tệp trong `assets/`. Không cần c�
 
 Ảnh cưới do chủ thiệp cung cấp. Ảnh phong bì và nền lụa được tạo bằng imagegen. Nền bờ biển: Jake Allison và Naail Hussain / Unsplash, liên kết nguồn ở cuối thiệp. Phông chữ Dancing Script, Cormorant Garamond và Manrope kèm giấy phép trong `assets/fonts/`.
 
-Chưa có tệp nhạc nền. Khi có âm thanh phù hợp, thêm vào `assets` và cập nhật `BACKGROUND_MUSIC_SRC` trong `index.html`.
 
 ## Thiệp nhà gái
 
@@ -24,4 +23,4 @@ Tiệc tại nhà hàng Biển Nhớ, xã An Lương, Gia Lai: 24/11/2026, đón
 Lễ Vu Quy tại tư gia nữ: 04:00 ngày 25/11/2026, thôn Hưng Lạc, xã An Lương, Gia Lai.
 Không có `side=bride` thì giữ thiệp nhà trai. Tham số `to` dùng cho cả hai bên.
 
-Nhạc: trình phát Zing MP3 do chủ thiệp cung cấp, tải khi khách chạm mở phong bì hoặc nút nhạc. Thu gọn giữ nguyên iframe; tạm dừng bằng điều khiển của Zing. Tự phát phụ thuộc trình duyệt và nhà cung cấp.
+Nhạc: `assets/le-duong.mp3` do chủ thiệp cung cấp, phát lặp khi khách chạm mở phong bì. Nút nhạc bật/tắt trực tiếp; lựa chọn tắt được giữ khi xem lại bìa thiệp. Trên iPhone, gọi phát ngay trong lần chạm của khách, không tự phát khi vừa tải trang.
