@@ -277,7 +277,7 @@ body.invitation-closed{overflow:hidden}.invitation-closed #wedding-content{visib
 .gift-card h3{font-family:var(--script);font-size:32px;font-weight:500;margin:10px 0 16px}
 .gift-qr{display:block;width:min(240px,100%);aspect-ratio:1;position:relative;overflow:hidden;margin:0 auto 18px;padding:0;border:0;background:white;border-radius:8px}
 .gift-qr img{position:absolute;max-width:none;height:auto;display:block}
-.gift-thuan .gift-qr img{width:181.0526%;left:-40.7895%;top:-112.5%}
+.gift-thuan .gift-qr img{width:191.1111%;left:-45.5556%;top:-122.2222%}
 .gift-quyen .gift-qr img{width:206.1538%;left:-52.9915%;top:-139.4872%}
 .gift-bank{font-size:12px;line-height:1.8;margin:0}.gift-account{display:block;font-size:16px;letter-spacing:.06em;margin-top:5px}
 .gift-actions{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:14px}.gift-actions a,.gift-actions button{font:inherit;font-size:11px;min-height:44px;display:inline-flex;align-items:center;padding:4px 0;background:none;border:0;border-bottom:1px solid #9ab7b0;color:var(--ink);text-decoration:none}
@@ -293,6 +293,31 @@ body.invitation-closed{overflow:hidden}.invitation-closed #wedding-content{visib
  .opening-screen:not(.is-reading) .envelope-art,.opening-screen:not(.is-reading) .envelope-flap,.opening-screen:not(.is-reading) .envelope-pearl{top:50%}
  .opening-screen:not(.is-reading) .opening-invitee{position:relative;inset:auto;width:100%;max-width:500px;margin:0;flex:0 0 auto;line-height:1.25}
  .opening-screen:not(.is-reading) .opening-action{position:relative;inset:auto;transform:none;flex:0 0 auto;margin:0;max-width:100%}
+}
+
+/* Short landscape screens need the letter above the opened envelope. */
+@media(orientation:landscape) and (max-height:600px){
+ .opening-screen.is-reading .envelope-stage{width:min(500px,90vw)}
+ .opening-screen.is-reading .mail-paper{top:12px;width:94%;height:calc(100svh - 86px);padding:16px 14px;justify-content:center}
+ .opening-screen.is-reading .paper-symbol,.opening-screen.is-reading .paper-location{display:none}
+ .opening-screen.is-reading .paper-label{font-size:8px}
+ .opening-screen.is-reading .paper-names{font-size:30px;line-height:1.2;margin:10px 0}
+ .opening-screen.is-reading .paper-names>span{display:inline}
+ .opening-screen.is-reading .paper-names .paper-and{font-size:20px;margin:0 8px}
+ .opening-screen.is-reading .paper-date{font-size:20px}
+ .opening-screen.is-reading .paper-guest{margin-top:12px}
+ .opening-screen.is-reading .paper-guest .guest-name{font-size:24px}
+ .opening-screen.is-reading .envelope-art,.opening-screen.is-reading .envelope-flap,.opening-screen.is-reading .envelope-pearl{transform:translateY(75svh);opacity:0}
+ .opening-screen.is-reading .opening-action{bottom:8px;transform:translate(-50%,0);font-size:22px;min-height:44px}
+}
+
+@media(min-width:761px) and (min-height:601px){
+ .opening-screen.is-reading .envelope-art,.opening-screen.is-reading .envelope-pearl{left:50%;width:min(78%,52svh);transform:translate(-50%,calc(-50% + 24svh))}
+ .opening-screen.is-reading .envelope-flap{left:50%;width:min(78%,52svh);transform:translate(-50%,calc(-50% + 24svh)) rotateX(180deg)}
+ .opening-screen.is-reading .opening-action{bottom:12px}
+ .opening-screen.is-reading .paper-names{font-size:46px;margin:12px 0}
+ .opening-screen.is-reading .paper-symbol{margin-bottom:12px}
+ .opening-screen.is-reading .paper-guest{margin-top:14px}
 }
 </style></head><body>
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs><clipPath id="portrait-heart" clipPathUnits="objectBoundingBox"><path d="M .5 .96 C .43 .90 .02 .65 .02 .30 C .02 .08 .15 .01 .29 .03 C .39 .04 .46 .11 .5 .18 C .54 .11 .61 .04 .71 .03 C .85 .01 .98 .08 .98 .30 C .98 .65 .57 .90 .5 .96 Z"/></clipPath></defs></svg>
