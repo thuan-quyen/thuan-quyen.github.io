@@ -285,6 +285,15 @@ body.invitation-closed{overflow:hidden}.invitation-closed #wedding-content{visib
 .gift-dialog-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px}.gift-dialog-top button{width:44px;height:44px;border:0;background:none;font-size:28px;color:inherit}
 #gift-large-image{display:block;width:100%;height:auto;margin-top:8px}#gift-save{display:block;text-align:center;padding:16px;font-size:13px}
 @media(max-width:600px){.gift-grid{grid-template-columns:1fr;gap:24px;max-width:340px}.gift-card{padding:24px 20px}.gift-section{padding:54px 24px}}
+
+/* Keep the closed desktop envelope and its caption in separate layout rows. */
+@media(min-width:761px){
+ .opening-screen:not(.is-reading){display:flex;flex-direction:column;justify-content:center;gap:12px;padding:24px;overflow-y:auto}
+ .opening-screen:not(.is-reading) .envelope-stage{position:relative;inset:auto;left:auto;width:min(500px,calc(100svh - 220px));height:min(500px,calc(100svh - 220px));min-width:180px;min-height:180px;flex:0 0 auto;transform:none}
+ .opening-screen:not(.is-reading) .envelope-art,.opening-screen:not(.is-reading) .envelope-flap,.opening-screen:not(.is-reading) .envelope-pearl{top:50%}
+ .opening-screen:not(.is-reading) .opening-invitee{position:relative;inset:auto;width:100%;max-width:500px;margin:0;flex:0 0 auto;line-height:1.25}
+ .opening-screen:not(.is-reading) .opening-action{position:relative;inset:auto;transform:none;flex:0 0 auto;margin:0;max-width:100%}
+}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs><clipPath id="portrait-heart" clipPathUnits="objectBoundingBox"><path d="M .5 .96 C .43 .90 .02 .65 .02 .30 C .02 .08 .15 .01 .29 .03 C .39 .04 .46 .11 .5 .18 C .54 .11 .61 .04 .71 .03 C .85 .01 .98 .08 .98 .30 C .98 .65 .57 .90 .5 .96 Z"/></clipPath></defs></svg>
 
