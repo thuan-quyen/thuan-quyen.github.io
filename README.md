@@ -8,7 +8,7 @@ Thiệp cưới phong cách biển xanh, mở phong bì hai bước và lời ch
 
 Trang chính là `index.html`, dùng các tệp trong `assets/`. Không cần cài thư viện hoặc build. Mở trang HTML để xem tại máy, hoặc bật Pages từ nhánh `main`, thư mục `/ (root)`.
 
-Ảnh cưới do chủ thiệp cung cấp. Ảnh phong bì và nền lụa được tạo bằng imagegen. Nền bờ biển: Jake Allison và Naail Hussain / Unsplash, liên kết nguồn ở cuối thiệp. Phông chữ Dancing Script, Cormorant Garamond và Manrope kèm giấy phép trong `assets/fonts/`.
+Ảnh cưới do chủ thiệp cung cấp. Ảnh phong bì và nền lụa được tạo bằng imagegen. Nền bờ biển: Jake Allison và Naail Hussain / Unsplash, nguồn: https://unsplash.com/photos/aerial-view-of-beach-during-daytime-WD6jyaFrVM8 và https://unsplash.com/photos/aerial-photo-of-beach-tOrJMH08lmg. Phông chữ Dancing Script, Cormorant Garamond và Manrope kèm giấy phép trong `assets/fonts/`.
 
 
 ## Thiệp nhà gái
