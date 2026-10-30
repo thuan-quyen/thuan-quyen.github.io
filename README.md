@@ -23,3 +23,5 @@ https://thuan-quyen.github.io/?side=bride&to=Anh-Th%E1%BA%AFng
 Tiệc tại nhà hàng Biển Nhớ, xã An Lương, Gia Lai: 24/11/2026, đón khách 10:30, nhập tiệc 11:00.
 Lễ Vu Quy tại tư gia nữ: 04:00 ngày 25/11/2026, thôn Hưng Lạc, xã An Lương, Gia Lai.
 Không có `side=bride` thì giữ thiệp nhà trai. Tham số `to` dùng cho cả hai bên.
+
+Nhạc: trình phát Zing MP3 do chủ thiệp cung cấp, tải khi khách chạm mở phong bì hoặc nút nhạc. Thu gọn giữ nguyên iframe; tạm dừng bằng điều khiển của Zing. Tự phát phụ thuộc trình duyệt và nhà cung cấp.

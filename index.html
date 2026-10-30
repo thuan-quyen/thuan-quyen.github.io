@@ -265,6 +265,14 @@ body.invitation-closed{overflow:hidden}.invitation-closed #wedding-content{visib
 }
 @supports(width:1cqh){@media(max-width:760px) and (orientation:portrait){.art .portrait-frame{width:min(calc(100cqw - 8px),calc((100cqh - 40px)*.8),300px)}}}
 
+
+.music-panel{position:fixed;right:20px;bottom:78px;z-index:121;width:min(420px,calc(100vw - 24px));background:#fffdf7;color:var(--ink);border:1px solid #d4e0dc;border-radius:16px;box-shadow:0 12px 40px #123d4933;overflow:hidden}
+.music-panel-header{display:flex;justify-content:space-between;align-items:center;padding:4px 10px 4px 16px;font-size:12px}
+.music-panel-header button{border:0;background:transparent;color:inherit;font-size:25px;width:44px;height:44px}
+.music-panel iframe{display:block;width:100%;height:180px;border:0;background:#fff}
+.music-panel p{font-size:10px;line-height:1.5;margin:10px 14px 13px;color:var(--muted)}
+#music-toggle{font-size:25px;padding:0}
+@media(max-width:760px){.music-panel{right:12px;bottom:73px}}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs><clipPath id="portrait-heart" clipPathUnits="objectBoundingBox"><path d="M .5 .96 C .43 .90 .02 .65 .02 .30 C .02 .08 .15 .01 .29 .03 C .39 .04 .46 .11 .5 .18 C .54 .11 .61 .04 .71 .03 C .85 .01 .98 .08 .98 .30 C .98 .65 .57 .90 .5 .96 Z"/></clipPath></defs></svg>
 
@@ -277,7 +285,8 @@ body.invitation-closed{overflow:hidden}.invitation-closed #wedding-content{visib
 <section class="section album" id="album"><div class="section-head"><span class="section-label">Chuyện tình qua những khung hình</span><h2>Những ngày có nhau</h2><p class="subtext">Giữ lại một ánh nhìn, một nụ cười,<br>và những khoảnh khắc chỉ thuộc về hai đứa.</p></div><p class="letter-style-caption">Từng tấm hình, một miền thương nhớ.</p><div class="gallery"><button type="button" class="photo photo-2" data-photo="2" aria-label="Xem ảnh 2: Khoảnh khắc bên nhau dưới ánh đèn chùm"><img src="assets/wedding-2.jpg" alt="Khoảnh khắc bên nhau dưới ánh đèn chùm" loading="lazy" decoding="async" width="1708" height="2560"><span aria-hidden="true">↗</span></button><button type="button" class="photo photo-3" data-photo="3" aria-label="Xem ảnh 3: Ngọc Thuận và Tố Quyên trong áo dài cưới"><img src="assets/wedding-3.jpg" alt="Ngọc Thuận và Tố Quyên trong áo dài cưới" loading="lazy" decoding="async" width="1708" height="2560"><span aria-hidden="true">↗</span></button><button type="button" class="photo photo-4" data-photo="4" aria-label="Xem ảnh 4: Cô dâu áo trắng bên chú rể vest đen"><img src="assets/wedding-4.jpg" alt="Cô dâu áo trắng bên chú rể vest đen" loading="lazy" decoding="async" width="1708" height="2560"><span aria-hidden="true">↗</span></button><button type="button" class="photo photo-1" data-photo="1" aria-label="Xem ảnh 1: Cùng nhau trong khu vườn lung linh ánh đèn"><img src="assets/wedding-1.jpg" alt="Cùng nhau trong khu vườn lung linh ánh đèn" loading="lazy" decoding="async" width="2560" height="1708"><span aria-hidden="true">↗</span></button><button type="button" class="photo photo-5" data-photo="5" aria-label="Xem ảnh 5: Nụ hôn hạnh phúc dưới ánh pháo hoa"><img src="assets/wedding-5.jpg" alt="Nụ hôn hạnh phúc dưới ánh pháo hoa" loading="lazy" decoding="async" width="2560" height="1708"><span aria-hidden="true">↗</span></button></div></section><dialog id="lightbox" aria-label="Album ảnh cưới"><button type="button" class="close-photo" aria-label="Đóng ảnh">×</button><img id="large-photo" alt=""><div class="photo-controls"><button type="button" id="previous-photo" aria-label="Ảnh trước">←</button><span id="photo-count"></span><button type="button" id="next-photo" aria-label="Ảnh tiếp theo">→</button></div></dialog><div class="details"><section class="section" id="lich-trinh"><div class="section-head"><span class="section-label">Những khoảnh khắc đáng nhớ</span><h2>Ngày mình chung đôi</h2><p class="subtext">Một ngày vui ấm áp, những câu chuyện thân quen<br>và thật nhiều yêu thương.</p></div><div class="timeline"><div class="timeline-item"><div class="timeline-time">06:30</div><div class="timeline-dot"></div><h3>Lễ tân hôn</h3><p>Hôn lễ được cử hành<br>tại tư gia nam</p></div><div class="timeline-item"><div class="timeline-time">09:30</div><div class="timeline-dot"></div><h3>Đón khách</h3><p>Trân trọng đón tiếp quý khách<br>tại nhà hàng Hoàng Hải</p></div><div class="timeline-item"><div class="timeline-time">10:00</div><div class="timeline-dot"></div><h3>Nhập tiệc</h3><p>Chung vui cùng hai gia đình<br>và chúc phúc đôi uyên ương</p></div></div></section></div>
 <section class="section save" id="hen-uoc"><span class="section-label">Đếm từng ngày đến hạnh phúc</span><h2>Hẹn gặp bạn trong ngày vui</h2><div class="countdown" aria-label="Thời gian còn lại đến lễ cưới"><div><strong id="days">—</strong><span>Ngày</span></div><div><strong id="hours">—</strong><span>Giờ</span></div><div><strong id="minutes">—</strong><span>Phút</span></div><div><strong id="seconds">—</strong><span>Giây</span></div></div><p class="subtext" id="countdown-note">25 tháng 11 năm 2026 · 09:30</p><button type="button" class="text-link" id="calendar">Lưu ngày vào lịch <span aria-hidden="true">↗</span></button><p class="address"><small>Thứ Tư, ngày 25/11/2026 · Nhà hàng Hoàng Hải, Đề Gi, Gia Lai</small></p></section>
 <footer class="closing"><div class="ornament" aria-hidden="true">囍</div><h2>Cảm ơn vì đã là một phần<br>trong câu chuyện của chúng mình.</h2><p>Thương mến,<br>Ngọc Thuận & Tố Quyên</p><button type="button" class="replay-button" id="replay-invitation">Xem lại bìa thiệp ↗</button><div class="footer">NGỌC THUẬN & TỐ QUYÊN · 25.11.2026</div><div class="image-credit">Ảnh biển: <a href="https://unsplash.com/photos/aerial-view-of-beach-during-daytime-WD6jyaFrVM8" target="_blank" rel="noopener noreferrer">Jake Allison</a> & <a href="https://unsplash.com/photos/aerial-photo-of-beach-tOrJMH08lmg" target="_blank" rel="noopener noreferrer">Naail Hussain</a> / Unsplash</div></footer></main><div role="status" class="toast" id="toast"></div>
-<audio id="background-music" preload="none" loop></audio><button type="button" id="music-toggle" class="music-toggle" aria-label="Bật nhạc nền" aria-pressed="false" title="Bật nhạc · Lễ Đường — Kai Đinh" hidden><svg class="music-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17V5l11-2v12M9 8l11-2"/><ellipse cx="6" cy="17.5" rx="3" ry="2.5"/><ellipse cx="17" cy="15.5" rx="3" ry="2.5"/></svg><svg class="music-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M8 6v12M16 6v12"/></svg></button>
+<button type="button" id="music-toggle" class="music-toggle" aria-label="Mở trình phát nhạc" aria-expanded="false" aria-controls="music-panel" title="Mở trình phát nhạc">♫</button>
+<aside id="music-panel" class="music-panel" aria-label="Nhạc cho ngày chung đôi" hidden><div class="music-panel-header"><span>Nhạc cho ngày chung đôi</span><button type="button" id="close-music" aria-label="Thu gọn trình phát nhạc">×</button></div><iframe id="zing-player" title="Trình phát nhạc Zing MP3" width="640" height="180" scrolling="no" allow="autoplay; fullscreen" allowfullscreen></iframe><p>Bấm Play để nghe · Tạm dừng nhạc trong trình phát</p></aside>
 <script>
 // Select the host family independently of the guest name (?to=...).
 const invitationParams=new URLSearchParams(window.location.search);
@@ -403,18 +412,27 @@ function resetHeartReveal(){
 heartButton.addEventListener('click',revealPortrait);heartAlternative.addEventListener('click',revealPortrait);
 if('IntersectionObserver' in window){new IntersectionObserver(entries=>{heartVisible=entries[0].isIntersecting;if(heartVisible)queueHeartReveal()},{threshold:.45}).observe(heartButton)}
 
-// Add the supplied audio file here when it is available. No external player is opened.
-const BACKGROUND_MUSIC_SRC='';
-const backgroundMusic=document.getElementById('background-music');
+// Load the supplied Zing player on the first intentional interaction.
 const musicToggle=document.getElementById('music-toggle');
-if(BACKGROUND_MUSIC_SRC){backgroundMusic.src=BACKGROUND_MUSIC_SRC;backgroundMusic.volume=.4;musicToggle.hidden=false}
-function setMusicState(playing){musicToggle.setAttribute('aria-pressed',String(playing));musicToggle.setAttribute('aria-label',playing?'Tắt nhạc nền':'Bật nhạc nền');musicToggle.title=playing?'Tắt nhạc · Lễ Đường — Kai Đinh':'Bật nhạc · Lễ Đường — Kai Đinh'}
-function startBackgroundMusic(){
- if(!BACKGROUND_MUSIC_SRC||!backgroundMusic.paused)return;
- backgroundMusic.play().then(()=>setMusicState(true)).catch(()=>setMusicState(false));
+const musicPanel=document.getElementById('music-panel');
+const zingPlayer=document.getElementById('zing-player');
+let musicPlayerLoaded=false;
+function setMusicPanel(open){
+ musicPanel.hidden=!open;
+ musicToggle.setAttribute('aria-expanded',String(open));
+ musicToggle.setAttribute('aria-label',open?'Thu gọn trình phát nhạc':'Mở trình phát nhạc');
+ musicToggle.title=open?'Thu gọn trình phát nhạc':'Mở trình phát nhạc';
 }
-musicToggle.addEventListener('click',()=>{if(backgroundMusic.paused)startBackgroundMusic();else{backgroundMusic.pause();setMusicState(false)}});
-backgroundMusic.addEventListener('play',()=>setMusicState(true));backgroundMusic.addEventListener('pause',()=>setMusicState(false));backgroundMusic.addEventListener('error',()=>{setMusicState(false);musicToggle.hidden=true});
+function startBackgroundMusic(){
+ if(musicPlayerLoaded)return;
+ zingPlayer.src='https://zingmp3.vn/embed/album/aPeNL1Y4Q30?start=true';
+ musicPlayerLoaded=true;setMusicPanel(true);
+}
+musicToggle.addEventListener('click',()=>{
+ if(!musicPlayerLoaded)startBackgroundMusic();else setMusicPanel(musicPanel.hidden);
+});
+document.getElementById('close-music').addEventListener('click',()=>{setMusicPanel(false);musicToggle.focus({preventScroll:true})});
+musicPanel.addEventListener('keydown',event=>{if(event.key==='Escape'){setMusicPanel(false);musicToggle.focus({preventScroll:true})}});
 
 // Animate frames on entering view; fade pixels in only after the real image decodes.
 const galleryForReveal=document.querySelector('.gallery');
