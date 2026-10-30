@@ -11,3 +11,15 @@ Trang chính là `index.html`, dùng các tệp trong `assets/`. Không cần c�
 Ảnh cưới do chủ thiệp cung cấp. Ảnh phong bì và nền lụa được tạo bằng imagegen. Nền bờ biển: Jake Allison và Naail Hussain / Unsplash, liên kết nguồn ở cuối thiệp. Phông chữ Dancing Script, Cormorant Garamond và Manrope kèm giấy phép trong `assets/fonts/`.
 
 Chưa có tệp nhạc nền. Khi có âm thanh phù hợp, thêm vào `assets` và cập nhật `BACKGROUND_MUSIC_SRC` trong `index.html`.
+
+## Thiệp nhà gái
+
+Thêm `?side=bride` để dùng thông tin nhà gái và đưa tên Tố Quyên lên trước:
+https://thuan-quyen.github.io/?side=bride
+
+Có thể kết hợp tên khách:
+https://thuan-quyen.github.io/?side=bride&to=Anh-Th%E1%BA%AFng
+
+Tiệc tại nhà hàng Biển Nhớ, xã An Lương, Gia Lai: 24/11/2026, đón khách 10:30, nhập tiệc 11:00.
+Lễ Vu Quy tại tư gia nữ: 04:00 ngày 25/11/2026, thôn Hưng Lạc, xã An Lương, Gia Lai.
+Không có `side=bride` thì giữ thiệp nhà trai. Tham số `to` dùng cho cả hai bên.

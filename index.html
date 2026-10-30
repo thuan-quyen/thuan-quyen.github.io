@@ -279,10 +279,61 @@ body.invitation-closed{overflow:hidden}.invitation-closed #wedding-content{visib
 <footer class="closing"><div class="ornament" aria-hidden="true">囍</div><h2>Cảm ơn vì đã là một phần<br>trong câu chuyện của chúng mình.</h2><p>Thương mến,<br>Ngọc Thuận & Tố Quyên</p><button type="button" class="replay-button" id="replay-invitation">Xem lại bìa thiệp ↗</button><div class="footer">NGỌC THUẬN & TỐ QUYÊN · 25.11.2026</div><div class="image-credit">Ảnh biển: <a href="https://unsplash.com/photos/aerial-view-of-beach-during-daytime-WD6jyaFrVM8" target="_blank" rel="noopener noreferrer">Jake Allison</a> & <a href="https://unsplash.com/photos/aerial-photo-of-beach-tOrJMH08lmg" target="_blank" rel="noopener noreferrer">Naail Hussain</a> / Unsplash</div></footer></main><div role="status" class="toast" id="toast"></div>
 <audio id="background-music" preload="none" loop></audio><button type="button" id="music-toggle" class="music-toggle" aria-label="Bật nhạc nền" aria-pressed="false" title="Bật nhạc · Lễ Đường — Kai Đinh" hidden><svg class="music-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17V5l11-2v12M9 8l11-2"/><ellipse cx="6" cy="17.5" rx="3" ry="2.5"/><ellipse cx="17" cy="15.5" rx="3" ry="2.5"/></svg><svg class="music-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M8 6v12M16 6v12"/></svg></button>
 <script>
-const weddingDate=new Date('2026-11-25T09:30:00+07:00');
+// Select the host family independently of the guest name (?to=...).
+const invitationParams=new URLSearchParams(window.location.search);
+const isBrideInvitation=invitationParams.get('side')==='bride';
+const invitationEvent=isBrideInvitation?{
+ names:'Tố Quyên và Ngọc Thuận',start:'2026-11-24T10:30:00+07:00',
+ uid:'quyen-thuan-bride-20261124',icsStart:'20261124T033000Z',icsEnd:'20261124T060000Z',
+ location:'Nhà hàng Biển Nhớ - Xã An Lương - Gia Lai',
+ description:'Đón khách 10:30 - Nhập tiệc 11:00 ngày 24/11/2026. Lễ Vu Quy tại tư gia nữ lúc 04:00 ngày 25/11/2026.',
+ filename:'thiep-nha-gai-to-quyen-ngoc-thuan.ics'
+}:{
+ names:'Ngọc Thuận và Tố Quyên',start:'2026-11-25T09:30:00+07:00',
+ uid:'quyen-thuan-groom-20261125',icsStart:'20261125T023000Z',icsEnd:'20261125T050000Z',
+ location:'Nhà hàng Hoàng Hải - Xã Đề Gi - Gia Lai',
+ description:'Đón khách 09:30 - Nhập tiệc 10:00. Nhà hàng Hoàng Hải - Xã Đề Gi - Gia Lai.',
+ filename:'le-cuoi-ngoc-thuan-to-quyen.ics'
+};
+if(isBrideInvitation){
+ const text=(selector,value)=>{document.querySelector(selector).textContent=value};
+ // All markup below is fixed invitation copy, never URL-provided content.
+ const markup=(selector,value)=>{document.querySelector(selector).innerHTML=value};
+ document.title='Tố Quyên & Ngọc Thuận — Thiệp mời nhà gái';
+ document.querySelector('meta[name="description"]').content='Trân trọng kính mời dự tiệc cưới Tố Quyên và Ngọc Thuận tại nhà hàng Biển Nhớ, xã An Lương, Gia Lai. Đón khách 10:30 ngày 24/11/2026.';
+ text('.opening-screen .sr-only','Thiệp mời lễ Vu Quy Tố Quyên và Ngọc Thuận');
+ text('.opening-heading','Tố Quyên & Ngọc Thuận · 24.11.2026');
+ text('.paper-label','Thiệp mời lễ Vu Quy');
+ markup('.paper-names','<span>Tố Quyên</span><span class="paper-and">&</span><span>Ngọc Thuận</span>');
+ text('.paper-date','24 . 11 . 2026');text('.paper-location','An Lương · Gia Lai');
+ markup('.brand-text','QUYÊN <i>&</i> THUẬN');text('.nav-date','24 . 11 . 2026');
+ markup('.hero h1','Tố Quyên<span class="and">&</span><em>Ngọc Thuận</em>');
+ text('.hero-bottom span:first-child','24 THÁNG 11, 2026');
+ text('.hero-bottom span:last-child','AN LƯƠNG · GIA LAI');
+ markup('.date-band','<span>THỨ BA</span><strong>24 . 11 . 2026</strong><span>AN LƯƠNG · GIA LAI</span>');
+ const families=document.querySelector('.families');families.prepend(families.lastElementChild);
+ markup('.couple-names','<span>Trần Thị Tố Quyên</span> <i>&</i> <span>Nguyễn Ngọc Thuận</span>');
+ markup('.event-date','<div class="side">THỨ BA<br>THÁNG 11</div><div class="day">24<small>2026</small></div><div class="side">ĐÓN KHÁCH<br>10:30</div>');
+ text('.place','Nhà hàng Biển Nhớ');
+ markup('.invite-content .address','Xã An Lương, tỉnh Gia Lai<br><small>Đón khách: 10:30 &nbsp; · &nbsp; Nhập tiệc: 11:00</small>');
+ document.querySelector('.invite-content .text-link').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Nhà hàng Biển Nhớ, xã An Lương, Gia Lai');
+ text('.invite-content .address:last-child small','Nhằm ngày 16 tháng 10 năm Bính Ngọ');
+ markup('#lich-trinh .subtext','Tiệc chung vui ngày 24/11 và lễ Vu Quy ngày 25/11,<br>cùng gia đình đón một chặng đường mới.');
+ markup('.timeline',[
+ '<div class="timeline-item"><div class="timeline-time">10:30 · 24/11</div><div class="timeline-dot"></div><h3>Đón khách</h3><p>Trân trọng đón tiếp quý khách<br>tại nhà hàng Biển Nhớ<br>Xã An Lương, tỉnh Gia Lai</p></div>',
+ '<div class="timeline-item"><div class="timeline-time">11:00 · 24/11</div><div class="timeline-dot"></div><h3>Nhập tiệc</h3><p>Chung vui cùng gia đình nhà gái<br>và chúc phúc đôi uyên ương<br>16 tháng 10 năm Bính Ngọ</p></div>',
+ '<div class="timeline-item"><div class="timeline-time">04:00 · 25/11</div><div class="timeline-dot"></div><h3>Lễ Vu Quy</h3><p>Hôn lễ được cử hành tại tư gia nữ<br>Thôn Hưng Lạc, xã An Lương, Gia Lai<br>17 tháng 10 năm Bính Ngọ</p></div>'
+ ].join(''));
+ text('#countdown-note','24 tháng 11 năm 2026 · 10:30');
+ text('#hen-uoc .address small','Thứ Ba, ngày 24/11/2026 · Nhà hàng Biển Nhớ, An Lương, Gia Lai');
+ markup('.closing > p','Thương mến,<br>Tố Quyên & Ngọc Thuận');
+ text('.footer','TỐ QUYÊN & NGỌC THUẬN · 24.11.2026');
+}
+
+const weddingDate=new Date(invitationEvent.start);
 function updateCountdown(){let s=Math.max(0,Math.floor((weddingDate-Date.now())/1000));const values=[Math.floor(s/86400),Math.floor(s%86400/3600),Math.floor(s%3600/60),s%60];['days','hours','minutes','seconds'].forEach((id,i)=>document.getElementById(id).textContent=String(values[i]).padStart(2,'0'));if(s===0)document.getElementById('countdown-note').textContent='Ngày yêu thương đã đến. Cảm ơn bạn đã chung vui!'}
 updateCountdown();setInterval(updateCountdown,1000);
-document.getElementById('calendar').addEventListener('click',()=>{const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Ngay Minh Chung Doi//VI','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:quyen-thuan-wedding-20261125@invitation.local','DTSTAMP:20261030T000000Z','DTSTART:20261125T023000Z','DTEND:20261125T050000Z','SUMMARY:Lễ cưới Ngọc Thuận và Tố Quyên','LOCATION:Nhà hàng Hoàng Hải - Xã Đề Gi - Gia Lai','DESCRIPTION:Don khach 09:30 - Nhap tiec 10:00. Nha hang Hoang Hai - Xa De Gi - Gia Lai.','END:VEVENT','END:VCALENDAR'];const url=URL.createObjectURL(new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='le-cuoi-ngoc-thuan-to-quyen.ics';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);document.getElementById('toast').textContent='Đã tạo lịch lễ cưới. Mở tệp vừa tải để thêm vào lịch.';setTimeout(()=>document.getElementById('toast').textContent='',5000)});
+document.getElementById('calendar').addEventListener('click',()=>{const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Ngay Minh Chung Doi//VI','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:'+invitationEvent.uid+'@invitation.local','DTSTAMP:20261030T000000Z','DTSTART:'+invitationEvent.icsStart,'DTEND:'+invitationEvent.icsEnd,'SUMMARY:Lễ cưới '+invitationEvent.names,'LOCATION:'+invitationEvent.location,'DESCRIPTION:'+invitationEvent.description,'END:VEVENT','END:VCALENDAR'];const url=URL.createObjectURL(new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=invitationEvent.filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);document.getElementById('toast').textContent='Đã tạo lịch lễ cưới. Mở tệp vừa tải để thêm vào lịch.';setTimeout(()=>document.getElementById('toast').textContent='',5000)});
 
 const photos=[...document.querySelectorAll('[data-photo]')],lightbox=document.getElementById('lightbox');let currentPhoto=0,returnFocus;
 function showPhoto(index){currentPhoto=(index+photos.length)%photos.length;const img=photos[currentPhoto].querySelector('img');document.getElementById('large-photo').src=img.getAttribute('src');document.getElementById('large-photo').alt=img.alt;document.getElementById('photo-count').textContent=(currentPhoto+1)+' / '+photos.length;}
@@ -301,7 +352,7 @@ function showInvitationCover(){
  clearTimeout(letterTimer);letterState='closed';openingScreen.classList.remove('is-unsealing','is-reading','is-leaving');openingScreen.hidden=false;
  document.body.classList.add('has-invitation','invitation-closed');weddingContent.classList.remove('content-ready');weddingContent.inert=true;weddingContent.setAttribute('aria-hidden','true');
  openingTriggers.forEach(button=>{button.disabled=false;button.setAttribute('aria-expanded','false')});
- document.querySelector('.envelope-stage').setAttribute('aria-label','Chạm để mở thư mời Ngọc Thuận và Tố Quyên');
+ document.querySelector('.envelope-stage').setAttribute('aria-label','Chạm để mở thư mời '+invitationEvent.names);
  document.querySelector('.mail-paper').setAttribute('aria-hidden','true');
  openingAction.textContent='Chạm nhẹ để mở thư';openingNote.textContent='Chạm phong bì để mở thiệp, sau đó chạm để đọc tiếp';window.scrollTo({top:0,behavior:'instant'});
 }
